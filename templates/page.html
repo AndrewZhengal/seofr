@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Content Wrapper -->
+<div id="content-wrapper" class="d-flex flex-column">
+
+  <!-- Main Content -->
+  <div id="content">
+
+    {% include 'navigation.html' %}
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+      <!-- Page Heading -->
+      <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+      </div>
+      <!-- Content Row -->
+      <div class="row">
+          <!-- Approach -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h3 class="m-0 font-weight-bold text-primary">{{page.url}}</h3>
+            </div>
+            <div class="card-body">
+              <h5 class="m-0 font-weight-bold text-primary">Title</h5>
+              <p>{{ page.title }}</p>
+              <h5 class="m-0 font-weight-bold text-primary">Description</h5>
+              <p>{{ page.description }}</p>
+              <h5 class="m-0 font-weight-bold text-primary">H1</h5>
+              <p>{{ page.h1 }}</p>
+              <h5 class="m-0 font-weight-bold text-primary">Response Time</h5>
+              <p>{{ page.response_time }}</p>
+              <h5 class="m-0 font-weight-bold text-primary">Title Length</h5>
+              <p>{{ page.title_len }} symbols</p>
+              <h5 class="m-0 font-weight-bold text-primary">Description Length</h5>
+              <p>{{ page.description_len }} symbols</p>
+              <br>
+              <h5 class="m-0 font-weight-bold text-primary">Scan Date</h5>
+              <p>{{ page.scanned }}</p>
+            </div>
+          </div>
+      </div>
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+  <!-- End of Main Content -->
+  <!-- Footer -->
+  <footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+      <div class="copyright text-center my-auto">
+        <span>Copyright &copy; Your Website 2019</span>
+      </div>
+    </div>
+  </footer>
+  <!-- End of Footer -->
+</div>
+<!-- End of Content Wrapper -->
+{% endblock %}

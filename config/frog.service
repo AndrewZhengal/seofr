@@ -1,0 +1,17 @@
+[Unit]
+Description=Python SEO Frog
+
+[Service]
+PIDFile=/run/blog/pid
+User=root
+Group=root
+WorkingDirectory=/root/seo-frog
+ExecStart=/usr/bin/python3 web.py
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+PrivateTmp=true
+Restart=always
+Nice=0
+
+[Install]
+WantedBy=multi-user.target
