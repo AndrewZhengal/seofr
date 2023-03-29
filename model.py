@@ -4,13 +4,13 @@ from peewee import *
 
 
 connection = {
-    'user': 'root',
-    'password': '@SbbxrvbvSyarnzdj<',
-    'host': 'localhost',
-    'port': 3306,
+            'user': 'py4seo',
+            'password': 'PY1111forSEO',
+            'host': '88.198.172.182',
+            'port': 5432,
 }
 
-db = peewee_async.MySQLDatabase('library2', autorollback=True, **connection)
+db = peewee_async.PostgresqlDatabase('library', autorollback=True, **connection)
 
 
 class Page(Model):
@@ -26,7 +26,7 @@ class Page(Model):
 
     class Meta:
         database = db
-        table_name = 'less_27'
+        table_name = 'ZA_less_27'
 
 
 objects = peewee_async.Manager(db)
@@ -34,6 +34,6 @@ objects = peewee_async.Manager(db)
 
 if __name__ == '__main__':
 
-    #db.drop_tables([Page])
+    db.drop_tables([Page])
 
     db.create_tables([Page])
